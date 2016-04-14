@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y postgresql-9.4
 
 USER postgres
 RUN /etc/init.d/postgresql start
-RUN echo "host all  all    0.0.0.0/0  md5" >> /etc/postgresql/9.4/main/pg_hba.conf
+RUN echo "local all  all               trust" >> /etc/postgresql/9.4/main/pg_hba.conf
 RUN echo "listen_addresses='*'" >> /etc/postgresql/9.4/main/postgresql.conf
 
 # Expose the PostgreSQL port
