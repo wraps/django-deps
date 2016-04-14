@@ -5,4 +5,8 @@ RUN set -ex \
     && wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add - \
     && apt-get update \
     && apt-get install -y heroku-toolbelt ruby ruby-dev \
-    && gem install dpl
+    && gem install dpl \
+    && useradd --create-home proj
+
+USER proj
+WORKDIR /home/proj
