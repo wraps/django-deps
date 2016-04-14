@@ -7,3 +7,5 @@ RUN /etc/init.d/postgresql start
 
 # Expose the PostgreSQL port
 EXPOSE 5432
+
+USER root
