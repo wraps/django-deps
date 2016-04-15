@@ -14,5 +14,6 @@ WORKDIR /home/proj
 
 RUN mkdir -p /home/proj/.virtualenvs/ \
     && pyvenv-3.5 /home/proj/.virtualenvs/proj \
-    && . /home/proj/.virtualenvs/proj/bin/activate
+    && . /home/proj/.virtualenvs/proj/bin/activate \
+    && pip3.5 install -U pip
 ENV PATH /home/proj/.virtualenvs/proj/bin:$PATH
