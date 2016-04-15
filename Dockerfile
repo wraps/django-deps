@@ -6,7 +6,8 @@ RUN set -ex \
     && apt-get update \
     && apt-get install -y heroku-toolbelt ruby ruby-dev \
     && gem install dpl \
-    && useradd --create-home proj
+    && useradd --create-home proj \
+    && chown -R proj:proj /var/lib/gems/2.1.0
 
 USER proj
 WORKDIR /home/proj
